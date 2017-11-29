@@ -1,0 +1,7 @@
+django
+pandas
+nsepy
+psycopg2
+djangorestframework
+lxml
+gunicorn
