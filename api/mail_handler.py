@@ -18,7 +18,7 @@ def send_read_receipt(sender):
 
     # Create the root message and fill in the from, to, and subject headers
     msgRoot = MIMEMultipart('related')
-    sender=(sender.split("@")[0]).replace("<","",">","")
+    sender=(sender.split("@")[0]).replace("<","",).replace(">","")
 
 
     msgRoot['Subject'] = 'READ Receipt From '+sender+':MHWTC - First Stakeholder Meet'
