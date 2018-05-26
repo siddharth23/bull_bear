@@ -53,3 +53,4 @@ from .mail_handler import send_read_receipt
 def send_acknowledgement(request):
     sender=unquote(request.GET.get("sender"))
     send_read_receipt(sender)
+    JsonResponse({"status":200,"message":"successfully read by the receipent"})

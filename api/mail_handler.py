@@ -32,7 +32,7 @@ def send_read_receipt(sender):
     msgAlternative = MIMEMultipart('alternative')
     msgRoot.attach(msgAlternative)
 
-    msgText = MIMEText('This is the alternative plain text message.')
+    msgText = MIMEText('Mail read by '+sender)
     msgAlternative.attach(msgText)
 
     # We reference the image in the IMG SRC attribute by the ID we give it below
