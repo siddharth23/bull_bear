@@ -48,4 +48,8 @@ def get_MFI(request,symbol):
     shares=list(Share.objects.filter(symbol=Stock(symbol)).all())
     serialized=shareSerializer(shares,many=True)
     return Response(serialized.data)
-
+from urllib.parse import unquote
+from api.mail_handler import send_read_receipt
+def send_acknowledgement(request):
+    sender=unquote(request.GET.get("sender"))
+    send_read_receipt(sender)
